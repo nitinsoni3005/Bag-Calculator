@@ -1,0 +1,129 @@
+/* ============================================================
+   product.css — Product Master page styles
+   Satyendra Packaging ERP — Phase 1
+   ============================================================ */
+
+/* ── Product Type Badges ── */
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.type-bopp       { background: #EFF6FF; color: #1D4ED8; }
+.type-pp         { background: #ECFDF5; color: #065F46; }
+.type-laminated  { background: #F5F3FF; color: #5B21B6; }
+.type-shopping   { background: #FFF7ED; color: #C2410C; }
+.type-pouch      { background: #FDF4FF; color: #86198F; }
+.type-fibc       { background: #FFFBEB; color: #92400E; }
+.type-tarpaulin  { background: #F0FDF4; color: #166534; }
+
+/* ── Product Card Grid (alternate view) ── */
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+}
+
+.product-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background: var(--color-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.product-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.product-card-name {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.product-card-code {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── View Toggle ── */
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.view-toggle-btn {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-card);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.view-toggle-btn.active {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* ── Filter Chips ── */
+.filter-chips {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.filter-chip {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+/* ── Product description truncation ── */
+.desc-truncate {
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text-secondary);
+}
