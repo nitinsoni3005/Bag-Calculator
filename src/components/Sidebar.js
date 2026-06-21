@@ -44,16 +44,21 @@ const NAV_ITEMS = [
     id: 'sales-order',
     label: 'Sales Order',
     icon: '🛒',
-    enabled: false,
-    badge: 'Soon',
+    enabled: true,   // Phase 2 ✓
     section: null,
   },
   {
     id: 'product-spec',
     label: 'Product Specification',
     icon: '📋',
-    enabled: false,
-    badge: 'Soon',
+    enabled: true,   // Phase 2 ✓
+    section: null,
+  },
+  {
+    id: 'dim-calculator',
+    label: 'Dimension Calculator',
+    icon: '🔢',
+    enabled: true,   // Phase 2 ✓
     section: null,
   },
   {

@@ -6,9 +6,12 @@
 
 /** Page title map */
 const PAGE_TITLES = {
-  'dashboard':       { title: 'Dashboard',        breadcrumb: ['Home', 'Dashboard'] },
-  'customer-master': { title: 'Customer Master',   breadcrumb: ['Master Data', 'Customer Master'] },
-  'product-master':  { title: 'Product Master',    breadcrumb: ['Master Data', 'Product Master'] },
+  'dashboard':       { title: 'Dashboard',              breadcrumb: ['Home', 'Dashboard'] },
+  'customer-master': { title: 'Customer Master',         breadcrumb: ['Master Data', 'Customer Master'] },
+  'product-master':  { title: 'Product Master',          breadcrumb: ['Master Data', 'Product Master'] },
+  'sales-order':     { title: 'Sales Orders',            breadcrumb: ['Production', 'Sales Orders'] },
+  'product-spec':    { title: 'Product Specification',   breadcrumb: ['Production', 'Product Specification'] },
+  'dim-calculator':  { title: 'Dimension Calculator',    breadcrumb: ['Production', 'Dimension Calculator'] },
 };
 
 /**

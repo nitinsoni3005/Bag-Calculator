@@ -1,0 +1,435 @@
+/* ============================================================
+   specification.css — Product Specification module styles
+   Satyendra Packaging ERP — Phase 2
+   ============================================================ */
+
+/* ── Two-panel layout ── */
+.spec-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .spec-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Left panel: spec entry form ── */
+.spec-form-panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.spec-form-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spec-form-header-title {
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.spec-form-header-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: var(--font-size-xs);
+  margin-top: 2px;
+}
+
+/* ── Product type selector tabs ── */
+.spec-type-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.spec-type-tabs::-webkit-scrollbar { display: none; }
+
+.spec-type-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.spec-type-tab:hover {
+  color: var(--color-text-primary);
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.spec-type-tab.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  background: #EFF6FF;
+}
+
+.spec-tab-icon { font-size: 1rem; }
+
+/* ── Spec form sections ── */
+.spec-form-body {
+  padding: var(--space-5) var(--space-6);
+}
+
+.spec-section {
+  margin-bottom: var(--space-5);
+}
+
+.spec-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid #EFF6FF;
+}
+
+.spec-section-icon { font-size: 0.9rem; }
+
+/* ── 3-column spec grid ── */
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.spec-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 600px) {
+  .spec-grid   { grid-template-columns: 1fr 1fr; }
+  .spec-grid-2 { grid-template-columns: 1fr; }
+}
+
+.spec-grid .span-2 { grid-column: span 2; }
+.spec-grid .span-3 { grid-column: span 3; }
+
+/* ── Input with unit suffix ── */
+.input-with-unit {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-unit input {
+  padding-right: 48px;
+}
+
+.input-unit-suffix {
+  position: absolute;
+  right: var(--space-3);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  font-weight: 500;
+}
+
+/* ── Toggle checkbox row ── */
+.spec-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+
+.spec-toggle-row label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Custom toggle switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.toggle-switch input { display: none; }
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #CBD5E1;
+  border-radius: 20px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: var(--color-accent);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(18px);
+}
+
+/* ── Right panel: results ── */
+.spec-result-panel {
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-4));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.result-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.result-card:hover { box-shadow: var(--shadow-md); }
+
+.result-card-header {
+  background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-card-title {
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.result-card-live-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ADE80;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
+}
+
+.result-card-body {
+  padding: var(--space-4) var(--space-5);
+}
+
+/* ── Total bag weight highlight ── */
+.result-total-weight {
+  background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.result-total-label {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.result-total-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #4ADE80;
+  line-height: 1.1;
+  margin: var(--space-1) 0;
+}
+
+.result-total-unit {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── Component weight rows ── */
+.result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.result-row:last-child { border-bottom: none; }
+
+.result-row-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.result-row-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.result-row-value {
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--color-text-primary);
+}
+
+/* ── Order totals card ── */
+.order-total-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.order-total-item {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.order-total-item-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.order-total-item-value {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: 2px;
+}
+
+/* ── Spec list table ── */
+.spec-list-table .spec-number-text {
+  font-weight: 600;
+  font-family: monospace;
+  color: var(--color-accent);
+}
+
+/* ── Print styles ── */
+@media print {
+  .sidebar,
+  .navbar,
+  .page-toolbar,
+  .spec-type-tabs,
+  .spec-form-actions,
+  .btn {
+    display: none !important;
+  }
+
+  .spec-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-result-panel {
+    position: static;
+  }
+
+  .main-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .page-content {
+    padding: 0 !important;
+  }
+
+  body { background: white !important; }
+
+  .print-spec-sheet {
+    page-break-inside: avoid;
+    border: 2px solid #000;
+    padding: 20px;
+  }
+}
+
+/* ── Spec sheet print card ── */
+.print-spec-sheet {
+  display: none;
+}
+
+/* ── Spec status badges ── */
+.spec-status-draft    { background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; }
+.spec-status-approved { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+.spec-status-revised  { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+.spec-status-obsolete { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+
+/* ── Spec form actions ── */
+.spec-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.spec-form-actions-right {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ── Calculation updating animation ── */
+.result-updating {
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.result-updated {
+  opacity: 1;
+  transition: opacity 0.2s;
+}

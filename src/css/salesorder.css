@@ -1,0 +1,224 @@
+/* ============================================================
+   salesorder.css — Sales Order module styles
+   Satyendra Packaging ERP — Phase 2
+   ============================================================ */
+
+/* ── Status badge variants ── */
+.so-status-pending    { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+.so-status-approved   { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+.so-status-production { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+.so-status-completed  { background: #F0F9FF; color: #0369A1; border: 1px solid #BAE6FD; }
+.so-status-cancelled  { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+
+/* ── SO number cell ── */
+.so-number-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.so-number-text {
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.so-date-text {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Customer cell in SO table ── */
+.so-customer-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.so-customer-name {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.so-po-ref {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
+/* ── Product cell ── */
+.so-product-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.so-product-name {
+  font-weight: 500;
+  font-size: 0.8rem;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.so-product-code {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
+/* ── Quantity cell ── */
+.so-qty-cell {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.so-qty-uom {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* ── Delivery date indicator ── */
+.delivery-date-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.delivery-date-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.delivery-days-remaining {
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.days-ok      { background: #ECFDF5; color: #065F46; }
+.days-warning { background: #FFFBEB; color: #92400E; }
+.days-overdue { background: #FEF2F2; color: #991B1B; }
+
+/* ── SO Summary Cards ── */
+.so-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+@media (max-width: 1100px) {
+  .so-summary-strip { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .so-summary-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+.so-summary-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+}
+
+.so-summary-card:hover { box-shadow: var(--shadow-md); }
+
+.so-summary-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.so-summary-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.so-summary-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ── SO Form layout ── */
+.so-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 800px) {
+  .so-form-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .so-form-grid { grid-template-columns: 1fr; }
+}
+
+.so-form-grid .span-2 { grid-column: span 2; }
+.so-form-grid .span-3 { grid-column: span 3; }
+
+@media (max-width: 800px) {
+  .so-form-grid .span-3 { grid-column: span 2; }
+}
+
+@media (max-width: 500px) {
+  .so-form-grid .span-2,
+  .so-form-grid .span-3 { grid-column: span 1; }
+}
+
+/* ── SO Detail view inside modal ── */
+.so-detail-section {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.so-detail-section-title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.so-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-6);
+}
+
+.so-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.so-detail-key {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.so-detail-val {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}

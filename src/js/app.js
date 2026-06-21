@@ -10,9 +10,12 @@
 
 import { renderSidebar, updateSidebarActive } from '../components/Sidebar.js';
 import { renderNavbar, updateNavbarBreadcrumb } from '../components/Navbar.js';
-import { renderDashboard }     from '../pages/Dashboard.js';
-import { renderCustomerMaster } from '../pages/CustomerMaster.js';
-import { renderProductMaster }  from '../pages/ProductMaster.js';
+import { renderDashboard }          from '../pages/Dashboard.js';
+import { renderCustomerMaster }      from '../pages/CustomerMaster.js';
+import { renderProductMaster }       from '../pages/ProductMaster.js';
+import { renderSalesOrder }          from '../pages/SalesOrder.js';
+import { renderProductSpecification } from '../pages/ProductSpecification.js';
+import { renderDimensionCalculator }  from '../pages/DimensionCalculator.js';
 
 /** Current active page */
 let _currentPage = 'dashboard';
@@ -126,6 +129,18 @@ function loadPage(pageId) {
 
       case 'product-master':
         renderProductMaster(_contentEl);
+        break;
+
+      case 'sales-order':
+        renderSalesOrder(_contentEl);
+        break;
+
+      case 'product-spec':
+        renderProductSpecification(_contentEl);
+        break;
+
+      case 'dim-calculator':
+        renderDimensionCalculator(_contentEl);
         break;
 
       default:

@@ -10,6 +10,9 @@ import './css/common.css';
 import './css/dashboard.css';
 import './css/customer.css';
 import './css/product.css';
+import './css/salesorder.css';
+import './css/specification.css';
+import './css/calculator.css';
 
 // ── App Bootstrap ──
 import { initApp } from './js/app.js';
@@ -29,5 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Boot the app
   initApp(appRoot, initialPage);
 
-  console.log('[ERP] Satyendra Packaging ERP v1.0 — Phase 1 loaded ✅');
+  console.log('[ERP] Satyendra Packaging ERP v2.0 — Phase 2 loaded ✅');
 });
