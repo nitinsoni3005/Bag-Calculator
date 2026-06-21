@@ -12,6 +12,10 @@ const PAGE_TITLES = {
   'sales-order':     { title: 'Sales Orders',            breadcrumb: ['Production', 'Sales Orders'] },
   'product-spec':    { title: 'Product Specification',   breadcrumb: ['Production', 'Product Specification'] },
   'dim-calculator':  { title: 'Dimension Calculator',    breadcrumb: ['Production', 'Dimension Calculator'] },
+  'raw-material':    { title: 'Raw Material Master',     breadcrumb: ['Materials & BOM', 'Raw Material Master'] },
+  'sap-material':    { title: 'SAP Material Master',     breadcrumb: ['Materials & BOM', 'SAP Material Master'] },
+  'bom-generator':   { title: 'BOM Generator',           breadcrumb: ['Materials & BOM', 'BOM Generator'] },
+  'bom-report':      { title: 'BOM Report',              breadcrumb: ['Materials & BOM', 'BOM Report'] },
 };
 
 /**

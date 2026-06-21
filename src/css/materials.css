@@ -1,0 +1,162 @@
+/* ============================================================
+   materials.css — Raw Material & SAP Material Master styles
+   Satyendra Packaging ERP — Phase 3
+   ============================================================ */
+
+/* ── Category color badges ── */
+.cat-fabric          { background:#EFF6FF; color:#1D4ED8; border:1px solid #BFDBFE; }
+.cat-tape            { background:#F5F3FF; color:#5B21B6; border:1px solid #DDD6FE; }
+.cat-bopp-film       { background:#ECFDF5; color:#065F46; border:1px solid #A7F3D0; }
+.cat-lamination      { background:#FFF7ED; color:#C2410C; border:1px solid #FED7AA; }
+.cat-ink             { background:#FDF4FF; color:#86198F; border:1px solid #F0ABFC; }
+.cat-thread          { background:#FFFBEB; color:#92400E; border:1px solid #FDE68A; }
+.cat-liner           { background:#F0FDF4; color:#166534; border:1px solid #BBF7D0; }
+.cat-packing         { background:#F8FAFC; color:#475569; border:1px solid #CBD5E1; }
+.cat-adhesive        { background:#FEF2F2; color:#991B1B; border:1px solid #FECACA; }
+.cat-loop            { background:#F0F9FF; color:#0369A1; border:1px solid #BAE6FD; }
+.cat-handle          { background:#FAFAF9; color:#44403C; border:1px solid #D6D3D1; }
+.cat-filler          { background:#FEFCE8; color:#713F12; border:1px solid #FEF08A; }
+.cat-finished-goods  { background:#EFF6FF; color:#1E40AF; border:1px solid #93C5FD; }
+
+/* ── Material code cell ── */
+.material-code-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.material-code-text {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.material-name-text {
+  font-size: 0.78rem;
+  font-weight: 500;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.material-desc-text {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Rate display ── */
+.rate-cell {
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.rate-cell .rate-currency {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* ── SAP code badge ── */
+.sap-code-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: #0F172A;
+  color: #94A3B8;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* ── MRP type display ── */
+.mrp-badge {
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.mrp-pd { background: #ECFDF5; color: #065F46; }
+.mrp-vb { background: #FFFBEB; color: #92400E; }
+.mrp-nd { background: #F1F5F9; color: #475569; }
+
+/* ── Procurement type ── */
+.proc-e { background: #EFF6FF; color: #1D4ED8; } /* In-house */
+.proc-f { background: #FFF7ED; color: #C2410C; } /* External */
+.proc-x { background: #F5F3FF; color: #5B21B6; } /* Both */
+
+/* ── Material summary strip ── */
+.material-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+@media (max-width: 900px) { .material-summary-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .material-summary-strip { grid-template-columns: 1fr; } }
+
+.material-summary-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+}
+
+.material-summary-card:hover { box-shadow: var(--shadow-md); }
+
+.material-summary-card-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.material-summary-card-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 2px 0;
+}
+
+.material-summary-card-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ── Category filter chips ── */
+.cat-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Rate edit inline ── */
+.rate-edit-input {
+  width: 80px;
+  padding: 2px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: monospace;
+  text-align: right;
+}
+
+.rate-edit-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}

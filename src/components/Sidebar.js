@@ -62,11 +62,38 @@ const NAV_ITEMS = [
     section: null,
   },
   {
+    id: null,
+    label: 'MATERIALS & BOM',
+    icon: null,
+    enabled: false,
+    section: true,
+  },
+  {
+    id: 'raw-material',
+    label: 'Raw Material Master',
+    icon: '🧱',
+    enabled: true,    // Phase 3 ✓
+    section: null,
+  },
+  {
+    id: 'sap-material',
+    label: 'SAP Material Master',
+    icon: '⚙️',
+    enabled: true,    // Phase 3 ✓
+    section: null,
+  },
+  {
     id: 'bom-generator',
     label: 'BOM Generator',
-    icon: '⚙️',
-    enabled: false,
-    badge: 'Soon',
+    icon: '🔩',
+    enabled: true,    // Phase 3 ✓
+    section: null,
+  },
+  {
+    id: 'bom-report',
+    label: 'BOM Report',
+    icon: '📊',
+    enabled: true,    // Phase 3 ✓
     section: null,
   },
   {

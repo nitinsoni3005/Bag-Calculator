@@ -16,6 +16,10 @@ import { renderProductMaster }       from '../pages/ProductMaster.js';
 import { renderSalesOrder }          from '../pages/SalesOrder.js';
 import { renderProductSpecification } from '../pages/ProductSpecification.js';
 import { renderDimensionCalculator }  from '../pages/DimensionCalculator.js';
+import { renderRawMaterialMaster }    from '../pages/RawMaterialMaster.js';
+import { renderSAPMaterialMaster }    from '../pages/SAPMaterialMaster.js';
+import { renderBOMGenerator }         from '../pages/BOMGenerator.js';
+import { renderBOMReport }            from '../pages/BOMReport.js';
 
 /** Current active page */
 let _currentPage = 'dashboard';
@@ -141,6 +145,22 @@ function loadPage(pageId) {
 
       case 'dim-calculator':
         renderDimensionCalculator(_contentEl);
+        break;
+
+      case 'raw-material':
+        renderRawMaterialMaster(_contentEl);
+        break;
+
+      case 'sap-material':
+        renderSAPMaterialMaster(_contentEl);
+        break;
+
+      case 'bom-generator':
+        renderBOMGenerator(_contentEl);
+        break;
+
+      case 'bom-report':
+        renderBOMReport(_contentEl);
         break;
 
       default:

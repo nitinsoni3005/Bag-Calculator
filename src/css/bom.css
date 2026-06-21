@@ -1,0 +1,336 @@
+/* ============================================================
+   bom.css — BOM Generator page styles
+   Satyendra Packaging ERP — Phase 3
+   ============================================================ */
+
+/* ── BOM page two-panel layout ── */
+.bom-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .bom-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Left panel: input selector ── */
+.bom-input-panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-4));
+}
+
+.bom-input-header {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  padding: var(--space-4) var(--space-5);
+}
+
+.bom-input-header-title {
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.bom-input-header-sub {
+  color: rgba(255,255,255,0.55);
+  font-size: var(--font-size-xs);
+  margin-top: 2px;
+}
+
+.bom-input-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Wastage settings panel ── */
+.wastage-settings-panel {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.wastage-settings-title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: var(--space-3);
+}
+
+.wastage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-4);
+}
+
+.wastage-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.wastage-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.wastage-input {
+  width: 56px;
+  padding: 2px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-family: monospace;
+  text-align: right;
+  background: var(--color-card);
+}
+
+.wastage-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.wastage-pct {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── Right panel: BOM output ── */
+.bom-output-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── BOM header info card ── */
+.bom-header-card {
+  background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.bom-header-left h2 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--space-1);
+}
+
+.bom-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.bom-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bom-meta-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bom-meta-value {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  font-family: monospace;
+}
+
+.bom-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+/* ── BOM summary strip ── */
+.bom-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+@media (max-width: 700px) { .bom-summary-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.bom-summary-box {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.bom-summary-box-val {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.bom-summary-box-lbl {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ── BOM table wrapper ── */
+.bom-table-wrapper {
+  background: var(--color-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.bom-table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.bom-table-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ── BOM data table ── */
+.bom-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.bom-data-table thead th {
+  background: var(--color-bg);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.bom-data-table thead th:first-child { padding-left: var(--space-5); }
+.bom-data-table thead th.num { text-align: right; }
+
+.bom-data-table tbody tr { transition: background 0.12s; }
+.bom-data-table tbody tr:hover { background: #F8FAFF; }
+
+.bom-data-table tbody td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  color: var(--color-text-primary);
+}
+
+.bom-data-table tbody td:first-child { padding-left: var(--space-5); }
+.bom-data-table tbody td.num {
+  text-align: right;
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+.bom-data-table tbody tr:last-child td { border-bottom: none; }
+
+/* ── Total row ── */
+.bom-total-row td {
+  background: #EFF6FF !important;
+  font-weight: 700;
+  border-top: 2px solid var(--color-accent);
+}
+
+/* ── BOM line seq number ── */
+.bom-seq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 22px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
+/* ── Empty BOM state ── */
+.bom-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12);
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.bom-empty-icon { font-size: 3.5rem; opacity: 0.3; }
+.bom-empty-title { font-size: var(--font-size-xl); font-weight: 700; color: var(--color-text-secondary); }
+.bom-empty-desc  { font-size: var(--font-size-sm); color: var(--color-text-muted); max-width: 320px; }
+
+/* ── SAP export preview ── */
+.sap-preview-box {
+  background: #0F172A;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #94A3B8;
+  max-height: 240px;
+  overflow-y: auto;
+  line-height: 1.7;
+}
+
+.sap-preview-comment { color: #475569; }
+.sap-preview-header  { color: #60A5FA; font-weight: 700; }
+.sap-preview-data    { color: #4ADE80; }
+
+/* ── Action toolbar below BOM ── */
+.bom-action-toolbar {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}

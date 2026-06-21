@@ -1,0 +1,232 @@
+/* ============================================================
+   reports.css — BOM Report page styles
+   Satyendra Packaging ERP — Phase 3
+   ============================================================ */
+
+/* ── Report page layout ── */
+.report-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .report-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Filter sidebar ── */
+.report-filter-panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-4));
+}
+
+.report-filter-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.report-filter-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.report-filter-body {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Report main content ── */
+.report-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── BOM list for reports ── */
+.bom-report-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.bom-report-card:hover { box-shadow: var(--shadow-md); }
+
+.bom-report-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.bom-report-card-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.bom-report-card-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  font-family: monospace;
+}
+
+.bom-report-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: #FAFBFC;
+}
+
+.bom-report-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.bom-report-meta-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bom-report-meta-value {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ── Compact BOM line table inside report card ── */
+.bom-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.bom-report-table thead th {
+  background: var(--color-bg);
+  padding: var(--space-2) var(--space-4);
+  text-align: left;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bom-report-table thead th:first-child { padding-left: var(--space-5); }
+.bom-report-table thead th.r { text-align: right; }
+
+.bom-report-table tbody td {
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.bom-report-table tbody td:first-child { padding-left: var(--space-5); }
+.bom-report-table tbody td.r {
+  text-align: right;
+  font-family: monospace;
+  font-size: 0.72rem;
+}
+
+.bom-report-table tbody tr:last-child td { border-bottom: none; }
+
+/* ── Report card footer ── */
+.bom-report-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.bom-report-footer-total {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ── Report status badges ── */
+.bom-status-draft    { background:#F8FAFC; color:#475569; border:1px solid #CBD5E1; }
+.bom-status-approved { background:#ECFDF5; color:#065F46; border:1px solid #A7F3D0; }
+.bom-status-revised  { background:#FFFBEB; color:#92400E; border:1px solid #FDE68A; }
+.bom-status-obsolete { background:#FEF2F2; color:#991B1B; border:1px solid #FECACA; }
+
+/* ── SAP preview section ── */
+.sap-section {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.sap-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: #0F172A;
+}
+
+.sap-section-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: #F1F5F9;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ── Print layout ── */
+@media print {
+  .report-filter-panel,
+  .page-toolbar,
+  .btn,
+  .sidebar,
+  .navbar,
+  .bom-report-card-footer .btn {
+    display: none !important;
+  }
+
+  .report-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .main-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .bom-report-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+}
